@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moemen Attafi – Full-Stack Developer</title>
+<meta name="description" content="Moemen Attafi, full-stack developer in Tunis (Angular, Node.js, MongoDB) with a cybersecurity background, moving toward DevSecOps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f6; --surface:#ffffff; --ink:#14213d; --muted:#4f5d75; --line:#d3dbe6;
+  --accent:#0b6e99; --signal:#e3a008; --accent-ink:#ffffff;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1626; --surface:#16213a; --ink:#e8eefb; --muted:#9fb0cc; --line:#2a3858;
+    --accent:#4cc2f0; --signal:#f2b632; --accent-ink:#0e1626; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1626; --surface:#16213a; --ink:#e8eefb; --muted:#9fb0cc; --line:#2a3858;
+  --accent:#4cc2f0; --signal:#f2b632; --accent-ink:#0e1626; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0}
+nav a{margin-right:1.25rem;color:var(--muted);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:2rem;padding:.35rem .9rem;font:inherit;font-size:.9rem;cursor:pointer}
+.hero{padding:4rem 0 3rem;border-bottom:1px solid var(--line)}
+.secure{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--muted);border:1px solid var(--line);background:var(--surface);padding:.3rem .8rem;border-radius:2rem}
+.secure svg{width:1rem;height:1rem;fill:var(--signal)}
+h1{font:800 clamp(2.8rem,9vw,6rem)/.95 var(--head);letter-spacing:-.03em;margin:1.4rem 0 1rem}
+.role{font:500 clamp(1.15rem,2.6vw,1.5rem)/1.4 var(--head);max-width:36rem;margin:0 0 1.6rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:.4rem;font-weight:500;text-decoration:none;border:1.5px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+section{padding:3.25rem 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font:700 1.9rem/1.2 var(--head);letter-spacing:-.01em;margin:0 0 1.6rem}
+.grid{display:grid;grid-template-columns:12rem 1fr;gap:1rem 2.5rem}
+.when{color:var(--muted);font-size:.95rem;padding-top:.2rem}
+.item{margin-bottom:2rem}
+.item h3{font:700 1.2rem/1.3 var(--head);margin:0 0 .15rem}
+.item .org{color:var(--muted);margin:0 0 .5rem}
+.item ul{margin:.4rem 0 0;padding-left:1.1rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem}
+.skills h3{font:700 1rem var(--head);margin:0 0 .4rem}
+.skills p{margin:0;color:var(--muted)}
+.repos{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1rem}
+.repo{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:.5rem;padding:1.1rem 1.2rem;text-decoration:none;color:var(--ink)}
+.repo:hover{border-color:var(--accent)}
+.repo strong{font:700 1.05rem var(--head);color:var(--accent);word-break:break-word}
+.repo p{margin:.45rem 0 .9rem;color:var(--muted);font-size:.95rem;flex:1}
+.meta{font-size:.85rem;color:var(--muted);display:flex;gap:1rem;align-items:center}
+.dot{width:.65rem;height:.65rem;border-radius:50%;background:var(--signal);display:inline-block;margin-right:.35rem}
+.note{color:var(--muted);font-size:.95rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+@media (max-width:640px){.grid{grid-template-columns:1fr;gap:.2rem}.hero{padding-top:2.5rem}nav{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch light or dark theme">Theme</button>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="secure"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5Zm-3 8V6a3 3 0 1 1 6 0v3H9Z"/></svg>Served over HTTPS from GitHub Pages</span>
+      <h1>Moemen Attafi</h1>
+      <p class="role">Full-stack developer in Tunis. I build Angular and Node.js applications, with a security background that is pulling me toward DevSecOps.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="cv.pdf" id="cv-link">Download CV (PDF)</a>
+      </div>
+    </div>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="when">Oct 2024 to present</div>
+        <div class="item">
+          <h3>Software Engineer</h3>
+          <p class="org">6NLG, Tunis</p>
+          <ul>
+            <li>Build and debug a full-stack application: Angular frontend, Node/Express backend, MongoDB database.</li>
+            <li>Designed the Angular HTTP layer around a generic base service and three interceptors for authentication, errors and loading state.</li>
+            <li>Handle cross-origin and cookie behavior between the frontend and the API.</li>
+          </ul>
+        </div>
+        <div class="when">Jul to Oct 2023</div>
+        <div class="item">
+          <h3>Penetration Testing and Automation Intern</h3>
+          <p class="org">Think Tank Business Solutions</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="when">In progress</div>
+        <div class="item">
+          <h3>Computer Engineering degree</h3>
+          <p class="org">National Higher School of Engineering of Tunis (ENSIT)</p>
+          <p>Specialization in Emerging Technologies and Cybersecurity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects on GitHub</h2>
+      <div class="repos" id="repos" aria-live="polite"></div>
+      <p class="note" id="repo-note"></p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div><h3>Frontend</h3><p>Angular, TypeScript, RxJS, HTTP interceptors</p></div>
+        <div><h3>Backend</h3><p>Node.js, Express, REST APIs, MongoDB, Mongoose</p></div>
+        <div><h3>Security</h3><p>Penetration testing, TLS and certificates, Linux internals</p></div>
+        <div><h3>Next focus</h3><p>DevOps and DevSecOps: CI/CD, automation, secure pipelines</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Open to conversations about full-stack and DevSecOps roles.</p>
+      <div class="cta">
+        <a class="btn primary" id="mail" href="#">Send an email</a>
+        <a class="btn ghost" id="linkedin" href="#">LinkedIn</a>
+        <a class="btn ghost" id="github" href="#">GitHub</a>
+      </div>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> Moemen Attafi</footer>
+</div>
+
+<script>
+/* ===== EDIT THESE THREE LINES ===== */
+const GITHUB_USER = "moemenattafi";            // your GitHub username, e.g. "moemen-attafi"
+const EMAIL = "attafimoemen21@gmail.com";   // your email
+const LINKEDIN = "https://www.linkedin.com/in/moemenattafi/";               // full LinkedIn profile URL
+/* ================================== */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("mail").href = "mailto:" + EMAIL;
+if (LINKEDIN) document.getElementById("linkedin").href = LINKEDIN; else document.getElementById("linkedin").style.display = "none";
+if (GITHUB_USER) document.getElementById("github").href = "https://github.com/" + GITHUB_USER; else document.getElementById("github").style.display = "none";
+
+/* Theme toggle */
+const root = document.documentElement;
+document.getElementById("theme").addEventListener("click", () => {
+  const dark = getComputedStyle(root).colorScheme === "dark";
+  root.setAttribute("data-theme", dark ? "light" : "dark");
+});
+
+/* Load repositories straight from GitHub */
+const box = document.getElementById("repos");
+const note = document.getElementById("repo-note");
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function card(r){
+  return `<a class="repo" href="${esc(r.html_url)}" target="_blank" rel="noopener">
+    <strong>${esc(r.name)}</strong>
+    <p>${esc(r.description || "No description yet. Add one on GitHub to show it here.")}</p>
+    <span class="meta">
+      ${r.language ? `<span><span class="dot"></span>${esc(r.language)}</span>` : ""}
+      <span>${r.stargazers_count} stars</span>
+    </span></a>`;
+}
+
+async function loadRepos(){
+  if (!GITHUB_USER){
+    note.textContent = "Set GITHUB_USER at the bottom of index.html and your public repositories will appear here automatically.";
+    return;
+  }
+  try{
+    const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`);
+    if (!res.ok) throw new Error(res.status);
+    const all = await res.json();
+    const repos = all
+      .filter(r => !r.fork && r.name.toLowerCase() !== (GITHUB_USER + ".github.io").toLowerCase())
+      .sort((a,b) => b.stargazers_count - a.stargazers_count || new Date(b.pushed_at) - new Date(a.pushed_at))
+      .slice(0,6);
+    if (!repos.length){ note.textContent = "No public repositories to show yet."; return; }
+    box.innerHTML = repos.map(card).join("");
+    note.innerHTML = `Showing my most recent original repositories. <a href="https://github.com/${esc(GITHUB_USER)}?tab=repositories">See all on GitHub</a>.`;
+  }catch(e){
+    note.innerHTML = `Repositories could not be loaded right now. <a href="https://github.com/${esc(GITHUB_USER)}">Open my GitHub profile</a>.`;
+  }
+}
+loadRepos();
+</script>
+</body>
+</html>
